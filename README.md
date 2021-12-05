@@ -24,6 +24,14 @@ Creating dietxurl_db_1 ... done
 $ docker run --rm -p 8080:8080 dietxurl-app
 ```
 
+### Integration Testing
+
+```bash
+$ curl -d '{"firstName":"sawol", "lastName":"jung"}' \
+-H "Content-Type: application/json" \
+-X POST http://localhost:8080/api/v1/customers
+```
+
 ## Deploy
 
 ```bash
