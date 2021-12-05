@@ -2,6 +2,12 @@
 
 ## Install
 
+### Build Image
+
+```bash
+$ docker build -t dietxurl-app .
+```
+
 ### Load PostgreSQL as locally
 
 ```bash
@@ -10,6 +16,19 @@ $ docker-compose -f docker-compose-pg.yml up -d
 Creating network "dietxurl_default" with the default driver
 Creating volume "dietxurl_dietxurl_local_db" with default driver
 Creating dietxurl_db_1 ... done
+```
+
+## Run
+
+```bash
+$ docker run --rm -p 8080:8080 dietxurl-app
+```
+
+## Deploy
+
+```bash
+$ docker build --build-arg ENVIRONMENT=prod -t dietxurl-app-prod:0.0.1 .
+$ docker run --rm -p 8080:8080 dietxurl-app-prod:0.0.1
 ```
 
 ### Reference Documentation

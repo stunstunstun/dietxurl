@@ -1,8 +1,8 @@
 spring:
-  profiles:
-    active: local
+  config:
+    activate:
+      on-profile: prod
   r2dbc:
     url: r2dbc:postgresql://localhost/dietxurl_local
     username: holaxuser
     password: holaxsecret
-    initialization-mode: always
