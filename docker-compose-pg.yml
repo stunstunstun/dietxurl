@@ -1,0 +1,17 @@
+version: '3'
+
+volumes:
+  dietxurl_local_db: {}
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - dietxurl_local_db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=dietxurl_local
+      - POSTGRES_USER=holaxuser
+      - POSTGRES_PASSWORD=holaxsecret
+      - POSTGRES_INITDB_ARGS=--encoding=UTF-8
+    ports:
+      - "5432:5432"
